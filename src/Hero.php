@@ -12,6 +12,7 @@ class Hero extends Fighter
         parent::__construct($name, $strength, $dexterity, $image);
         $this->weapon = $weapon;
         $this->shield = $shield;
+
     }
     public function getDamage(): int
     {
