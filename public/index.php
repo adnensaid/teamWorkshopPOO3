@@ -1,17 +1,18 @@
 <?php
-
 require '../vendor/autoload.php';
 
 /** ✅ DEBUT DE LA ZONE À MODIFIER ✅ **/
 
 use App\Shield;
 use App\Weapon;
-use App\Fighter;
+use App\Hero;
+use App\Monster;
 
-$heracles = new Fighter('Heracles', 20, 6, 'heracles.svg');
-$bird1 = new Fighter('Bird', 25, 12, 'bird.svg');
-$bird2 = new Fighter('Bird', 25, 12, 'bird.svg');
-$bird3 = new Fighter('Bird', 25, 12, 'bird.svg');
+$heracles = new Hero('Heracles', 20, 6, 'heracles.svg');
+
+$bird1 = new Monster('Bird', 25, 12, 'bird.svg');
+$bird2 = new Monster('Bird', 25, 12, 'bird.svg');
+$bird3 = new Monster('Bird', 25, 12, 'bird.svg');
 
 
 $sword = new Weapon();

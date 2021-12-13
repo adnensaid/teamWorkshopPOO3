@@ -4,8 +4,8 @@ namespace App;
 
 class Shield
 {
-    private int $protection = 10;
-    private string $image = 'shield.svg';
+    private $protection = 10;
+    private $image = 'shield.svg';
 
     /**
      * Get the value of protection
