@@ -9,11 +9,11 @@ class Fighter
 {
     public const MAX_LIFE = 100;
 
-    protected $name;
-    protected $strength;
-    protected $dexterity;
-    protected $image = 'fighter.svg';
-    protected $life = self::MAX_LIFE;
+    protected string $name;
+    protected int $strength;
+    protected int $dexterity;
+    protected string $image = 'fighter.svg';
+    protected int $life = self::MAX_LIFE;
 
     public function __construct(
         string $name,
@@ -55,9 +55,12 @@ class Fighter
     public function fight(Fighter $adversary): void
     {
         $damage = rand(1, $this->getDamage()) - $adversary->getDefense();
+        $damage = max(0, $damage);
+        /*
         if ($damage < 0) {
             $damage = 0;
         }
+        */
         $adversary->setLife($adversary->getLife() - $damage);
     }
 

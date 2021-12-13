@@ -1,5 +1,8 @@
 <?php
+
 namespace App;
-class Monster extends Fighter{
+
+class Monster extends Fighter
+{
 
 }
