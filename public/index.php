@@ -7,9 +7,7 @@ use App\Shield;
 use App\Weapon;
 use App\Hero;
 use App\Monster;
-
 $heracles = new Hero('Heracles', 20, 6, 'heracles.svg');
-
 $bird1 = new Monster('Bird', 25, 12, 'bird.svg');
 $bird2 = new Monster('Bird', 25, 12, 'bird.svg');
 $bird3 = new Monster('Bird', 25, 12, 'bird.svg');

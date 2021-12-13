@@ -3,14 +3,14 @@ namespace App;
 
 class Hero extends Fighter 
 {
-
-    private $weapon = null;
-    private $shield = null;
-    public function __construct(?Weapon $weapon, ?Shield $shield)
+    protected $weapon;
+    protected $shield;
+    public function __construct($name, $strength, $dexterity, $image, ?Weapon $weapon = null, ?Shield $shield = null)
     {
-        //parent::__construct($name, $strength, $dexterity, $image); 
+        parent::__construct($name, $strength, $dexterity, $image);
         $this->weapon = $weapon;
         $this->shield = $shield;
+
     }
     public function getDamage(): int
     {
