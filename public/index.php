@@ -7,11 +7,20 @@ use App\Shield;
 use App\Weapon;
 use App\Hero;
 use App\Monster;
-$heracles = new Hero('Heracles', 20, 6, 'heracles.svg');
-$bird1 = new Monster('Bird', 25, 12, 'bird.svg');
-$bird2 = new Monster('Bird', 25, 12, 'bird.svg');
-$bird3 = new Monster('Bird', 25, 12, 'bird.svg');
+use App\Arena;
 
+
+
+$heracles = new Hero('Heracles', 20, 6, 'heracles.svg', 4,4, 1);
+
+$bird1 = new Monster('Bird', 25, 12, 'bird.svg', 4,5, 2.5);
+$bird2 = new Monster('Bird', 25, 12, 'bird.svg', 9,9);
+$bird3 = new Monster('Bird', 25, 12, 'bird.svg',6,7);
+$monsters = [ $bird1, $bird2, $bird3 ];
+$arena = new Arena($monsters, $heracles);
+
+//print_r($heracles->getRange(), $bird1->getRange());
+//print_r($arena->getDistance($heracles, $bird3));
 
 $sword = new Weapon();
 $heracles->setWeapon($sword);
@@ -19,6 +28,8 @@ $heracles->setWeapon($sword);
 $shield = new Shield();
 $heracles->setShield($shield);
 
+$bow = new Weapon(5,8, 'bow.svg');
+$heracles->setWeapon($bow);
 
 /** FIN DE LA ZONE A MODIFIER **/
 /** ⛔ Ne pas modifier en dessous ⛔ **/

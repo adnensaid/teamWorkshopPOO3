@@ -5,13 +5,19 @@ class Hero extends Fighter
 {
     protected $weapon;
     protected $shield;
-    public function __construct($name, $strength, $dexterity, $image, ?Weapon $weapon = null, ?Shield $shield = null)
+    public function __construct($name, $strength, $dexterity, $image, $x, $y, $range, ?Weapon $weapon = null, ?Shield $shield = null)
     {
-        parent::__construct($name, $strength, $dexterity, $image);
+        parent::__construct($name, $strength, $dexterity, $image, $x, $y, $range);
         $this->weapon = $weapon;
         $this->shield = $shield;
 
     }
+
+    public function getRange()
+    {
+        return $this->range + $this->getWeapon()->getRange();
+    }
+
     public function getDamage(): int
     {
         $damage = $this->getStrength();

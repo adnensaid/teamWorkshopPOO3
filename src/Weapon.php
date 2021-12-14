@@ -4,9 +4,27 @@ namespace App;
 
 class Weapon
 {
-    private $damage = 10;
+    private $damage;
+    private $image;
+    private $range;
 
-    private $image = 'sword.svg';
+    public function __construct(float $range = 0.5, int $damage = 10, string $image = 'sword.svg')
+    {
+        $this->range = $range;
+        $this->damage = $damage;
+        $this->image = $image;
+    }
+
+
+    public function getRange(): float
+    {
+        return $this->range;
+    }
+
+    public function setRange(float $range): void
+    {
+        $this->range = $range;
+    }
 
     public function getDamage(): int
     {

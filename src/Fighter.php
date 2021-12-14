@@ -14,17 +14,33 @@ class Fighter
     protected $dexterity;
     protected $image = 'fighter.svg';
     protected $life = self::MAX_LIFE;
+    protected $x;
+    protected $y;
+    protected $range;
+
 
     public function __construct(
         string $name,
         int $strength = 10,
         int $dexterity = 5,
-        string $image = 'fighter.svg'
+        string $image = 'fighter.svg',
+        int $x,
+        int $y,
+        float $range = 1
     ) {
         $this->name = $name;
         $this->strength = $strength;
         $this->dexterity = $dexterity;
         $this->image = $image;
+        $this->x = $x;
+        $this->y = $y;
+        $this->range = $range;
+
+    }
+
+    public function getRange()
+    {
+        return $this->range;
     }
 
     public function getDamage() : int
@@ -34,7 +50,28 @@ class Fighter
     public function getDefense() : int
     {
       return $this->getDexterity();
-    }  
+    }
+
+    public function getX()
+    {
+        return $this->x;
+    }
+
+    public function setX($x): void
+    {
+        $this->x = $x;
+    }
+
+    public function getY()
+    {
+        return $this->y;
+    }
+
+    public function setY($y): void
+    {
+        $this->y = $y;
+    }
+
     /**
      * Get the value of name
      */
